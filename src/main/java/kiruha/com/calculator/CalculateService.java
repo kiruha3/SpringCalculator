@@ -49,22 +49,22 @@ public class CalculateService implements CalculateSirviceInterface {
 
     @Override
     public String plus(Double num1, Double num2) {
-        return checkNumber(num1, num2, "+");
+        return "Сложение: "+checkNumber(num1, num2, "+");
     }
 
     @Override
     public String minus(Double num1, Double num2) {
-        return checkNumber(num1, num2, "-");
+        return "Вычитание: " +checkNumber(num1, num2, "-");
     }
 
     @Override
     public String div(Double num1, Double num2) {
-        return checkNumber(num1, num2, "/");
+        return "Деление: "+checkNumber(num1, num2, "/");
     }
 
     @Override
     public String mult(Double num1, Double num2) {
-        return checkNumber(num1, num2, "*");
+        return "Умножение: "+checkNumber(num1, num2, "*");
     }
 
     @Override
@@ -92,7 +92,7 @@ public class CalculateService implements CalculateSirviceInterface {
         if (num1 == null || num2 == null) {
             return "Вы указали не полное колличество данных";
         } else {
-            return "Сложение: " + num1 + "+" + num2 + "=" + simvoleAndResult(num1, num2, simvol);
+            return num1 + "+" + num2 + "=" + simvoleAndResult(num1, num2, simvol);
         }
     }
 
