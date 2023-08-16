@@ -3,7 +3,7 @@ package kiruha.com.calculator;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CalculateService {
+public class CalculateService implements CalculateSirviceInterface{
 
     public String calculator() {
         return "<style>" +
@@ -46,22 +46,22 @@ public class CalculateService {
                     "</div>" +
                 "</div>";
     }
-
+    @Override
     public String plus(String num1, String num2) {
         String result = "Сложение: " + num1 + "+" + num2 + "=" + (Double.parseDouble(num1) + Double.parseDouble(num2));
         return result;
     }
-
+    @Override
     public String minus(String num1, String num2) {
         String result = "Вычтание: " + num1 + "+" + num2 + "=" + (Double.parseDouble(num1) - Double.parseDouble(num2));
         return result;
     }
-
+    @Override
     public String div(String num1, String num2) {
         String result = "Деление: " + num1 + "+" + num2 + "=" + (Double.parseDouble(num1) / Double.parseDouble(num2));
         return result;
     }
-
+    @Override
     public String mult(String num1, String num2) {
         String result = "Умножение: " + num1 + "+" + num2 + "=" + (Double.parseDouble(num1) * Double.parseDouble(num2));
         return checkNumber(num1, num2, result);
